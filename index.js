@@ -1,0 +1,1 @@
+console.log("first console of the index.js on 31 October 2023")
