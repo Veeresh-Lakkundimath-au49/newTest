@@ -31,7 +31,7 @@ cron.schedule('*/2 * * * * *', async () => {
   });
 
 
-  
+
 // console.log("Hello world from new project");
 // app.get("/", (req, res) => res.send("Express on Vercel"));
 
@@ -39,4 +39,4 @@ cron.schedule('*/2 * * * * *', async () => {
 
 // module.exports = app;
 
-// module.exports = app; // Export the app for Vercel deployment
+module.exports = app; // Export the app for Vercel deployment
