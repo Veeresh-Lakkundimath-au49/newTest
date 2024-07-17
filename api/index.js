@@ -15,7 +15,7 @@ const cron = require('node-cron');
 //     console.log('Hello, World! from the home route');
 //     res.send("Server started successfully");
 // })
-
+let counter = 0;
 const express = require("express");
 const app = express();
 cron.schedule('*/2 * * * * *', async () => {
@@ -33,8 +33,15 @@ cron.schedule('*/2 * * * * *', async () => {
 
 
 console.log("Hello world from new project");
-app.get("/", (req, res) => res.send("Express on Vercel"));
+app.get("/", (req, res) => {
+  counter += 1;
+  res.send("Express on Vercel")
+});
 
+app.get("/counter",(req,res)=>{
+  console.log("counter: ",counter);
+  res.send(counter)
+})
 app.listen(3000, () => console.log("Server ready on port 3000."));
 
 module.exports = app;
