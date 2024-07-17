@@ -22,7 +22,7 @@ cron.schedule('*/2 * * * * *', async () => {
     console.log('Hello, World!');
     try {
         let info = await fetch("https://new-test-express.vercel.app/");
-        const data = await response.text();
+        const data = await info.text();
         console.log("data: ",data);
     } catch (error) {
         console.log("error in cron: ",error);
