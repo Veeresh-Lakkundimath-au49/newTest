@@ -1,4 +1,4 @@
-// console.log("first console of the index.js on 31 October 2023")
+console.log("first console of the index.js on 31 October 2023")
 
 const express = require('express');
 const cron = require('node-cron');
