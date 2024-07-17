@@ -18,7 +18,7 @@ const cron = require('node-cron');
 let counter = 0;
 const express = require("express");
 const app = express();
-cron.schedule('*/2 * * * * *', async () => {
+cron.schedule('*/5 * * * * *', async () => {
     console.log('Hello, World cron job!');
     try {
         let info = await fetch("https://new-test-express.vercel.app/");
