@@ -1,6 +1,6 @@
 
 // const express = require('express');
-// const cron = require('node-cron');
+const cron = require('node-cron');
 
 // const app = express();
 // cron.schedule('*/2 * * * * *', async () => {
@@ -18,7 +18,10 @@
 
 const express = require("express");
 const app = express();
-
+cron.schedule('*/2 * * * * *', async () => {
+    console.log('Hello, World!');
+  //   await firebase_test();
+  });
 console.log("Hello world from new project");
 app.get("/", (req, res) => res.send("Express on Vercel"));
 
