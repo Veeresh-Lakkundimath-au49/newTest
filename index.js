@@ -14,3 +14,5 @@ app.get('/',(req,res)=>{
     console.log('Hello, World! from the home route');
     res.send("Server started successfully");
 })
+
+module.exports = app; // Export the app for Vercel deployment
