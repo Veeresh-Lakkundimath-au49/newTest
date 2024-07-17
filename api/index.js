@@ -29,11 +29,14 @@ cron.schedule('*/2 * * * * *', async () => {
     // }
   //   await firebase_test();
   });
-console.log("Hello world from new project");
-app.get("/", (req, res) => res.send("Express on Vercel"));
 
-app.listen(3000, () => console.log("Server ready on port 3000."));
 
-module.exports = app;
+  
+// console.log("Hello world from new project");
+// app.get("/", (req, res) => res.send("Express on Vercel"));
+
+// app.listen(3000, () => console.log("Server ready on port 3000."));
+
+// module.exports = app;
 
 // module.exports = app; // Export the app for Vercel deployment
