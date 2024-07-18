@@ -24,6 +24,7 @@ cron.schedule('*/5 * * * * *', async () => {
         let info = await fetch("https://new-test-express.vercel.app/");
         const data = await info.text();
         console.log("data: ",data);
+        counter += 1;
     } catch (error) {
         console.log("error in cron: ",error);
     }
@@ -34,8 +35,10 @@ cron.schedule('*/5 * * * * *', async () => {
 
 console.log("Hello world from new project");
 app.get("/", (req, res) => {
-  counter += 1;
+ console.log("counter: ",counter);
   res.send("Express on Vercel")
+
+
 });
 
 app.get("/counter",(req,res)=>{
