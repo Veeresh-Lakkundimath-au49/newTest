@@ -50,7 +50,7 @@ cron.schedule('*/10 * * * * *', async () => {
 
 // console.log("Hello world from new project");
 app.get("/", (req, res) => {
-//  console.log("counter: ",counter);
+ console.log("counter: ",counter);
   res.send("Express on Vercel")
 
 
