@@ -1,7 +1,7 @@
 
 // const express = require('express');
 const cron = require('node-cron');
-
+const cors = require('cors');
 // const app = express();
 // cron.schedule('*/2 * * * * *', async () => {
 //   console.log('Hello, World!');
@@ -18,6 +18,17 @@ const cron = require('node-cron');
 let counter = 0;
 const express = require("express");
 const app = express();
+
+const corsOptions = {
+  origin: 'https://new-test-express.vercel.app/', // Replace with your Vercel app URL
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+};
+
+// Use cors middleware with options
+app.use(cors(corsOptions));
+
+
 cron.schedule('*/10 * * * * *', async () => {
     // console.log('Hello, World cron job!');
     try {
