@@ -18,10 +18,14 @@ const cron = require('node-cron');
 let counter = 0;
 const express = require("express");
 const app = express();
-cron.schedule('*/5 * * * * *', async () => {
-    console.log('Hello, World cron job!');
+cron.schedule('*/10 * * * * *', async () => {
+    // console.log('Hello, World cron job!');
     try {
+      // https://new-test-express.vercel.app/
         let info = await fetch("https://new-test-express.vercel.app/");
+        if (!info.ok) {
+          throw new Error(`HTTP error! Status: ${info.status}`);
+      }
         const data = await info.text();
         console.log("data: ",data);
         counter += 1;
@@ -33,9 +37,9 @@ cron.schedule('*/5 * * * * *', async () => {
 
 
 
-console.log("Hello world from new project");
+// console.log("Hello world from new project");
 app.get("/", (req, res) => {
- console.log("counter: ",counter);
+//  console.log("counter: ",counter);
   res.send("Express on Vercel")
 
 
