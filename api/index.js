@@ -134,6 +134,19 @@ function fetchData(array, userInput, pageSize = 20) {
   return array.slice(startIndex, endIndex);
 }
 
+//convert list to key value pairs
+const groupByProfileUid = (array) => {
+  return array.reduce((acc, item) => {
+    const key = item.profile_uid;
+    if (!acc[key]) {
+      acc[key] = [];
+    }
+    acc[key].push(item);
+    return acc;
+  }, {});
+};
+
+
 // API Endpoints
 app.get("/", (req, res) => {
   console.log("counter: ", counter);
@@ -170,12 +183,38 @@ app.get("/listings", (req, res) => {
     const page = req.query.page;
     const userInput = Number(page); // User input (e.g., 1 for page 1, 2 for page 2, etc.)
     const result = fetchData(listing_data, userInput);
+
     res.status(200).send({ data: result });
   } catch (error) {
     console.log("error: ", error);
     res.status(400).send({ error: error });
   }
 });
+
+app.post('/user/listings',(req,res)=>{
+try {
+  const { list } = req.body;
+  const converted_list = groupByProfileUid(list);
+  
+  for (const key in converted_list) {
+    if (converted_list.hasOwnProperty(key)) {  // Check if it's a property of the object itself (not the prototype)
+      setCache(`${key}`, converted_list[key]);// Logs 'name John', 'age 30', 'country USA'
+    }
+  }
+  res.status(200).send({ data: converted_list });
+} catch (error) {
+  res.status(400).send({ error: error });
+}
+});
+
+app.get('user/listings',(req,res)=>{
+try {
+  const uid = req.query.uid;
+} catch (error) {
+  res.status(400).send({ error: error });
+}
+});
+
 
 // Start the server
 app.listen(3000, () => console.log("Server ready on port 3000."));
