@@ -1,0 +1,44 @@
+{
+  "UC9h8BDcXwkhZtnqoQJ7PggA": {
+    "uid": "admin_uid",
+    "profile_uid": "UC9h8BDcXwkhZtnqoQJ7PggA",
+    "name": "Warographics",
+    "description": "Videos about WAR. \n\nDoes what it says on the tin, doesn't it?\n",
+    "listing_type": "YouTube",
+    "media_types": "video",
+    "usage_policy": "open",
+    "handle_url": "http://www.youtube.com/@warographics643",
+    "topics": "Action & Adventure",
+    "languages": "",
+    "keywords": "",
+    "handle_image": "https://res.cloudinary.com/dd3jjigpm/image/upload/v1736310368/yt_ctsseo.png"
+  },
+  "UCXqlds5f7B2OOs9vQuevl4A": {
+    "uid": "admin_uid",
+    "profile_uid": "UCXqlds5f7B2OOs9vQuevl4A",
+    "name": "Red Bull Bike",
+    "description": "Welcome to the official Red Bull Bike YouTube Channel! Watch weekly updates from the world of Bike!\n\nConnect with elite riders from MTB Downhill, MTB Slopestyle, BMX, trials and everything in between. Check out our weekly series every Friday and LIVE streams in the weekends, from Red Bull Rampage to Crankworx and more!\n\nLet us take you behind the scenes and closer to the action, introducing you to the world of Red Bull Bike. Remember to subscribe, like, share and let us know what you wanna see more of on our channel!",
+    "listing_type": "YouTube",
+    "media_types": "video",
+    "usage_policy": "open",
+    "handle_url": "http://www.youtube.com/@RedBullBike",
+    "topics": "Action & Adventure",
+    "languages": "",
+    "keywords": "",
+    "handle_image": "https://res.cloudinary.com/dd3jjigpm/image/upload/v1736316038/ue2rtbyn55rxamp3lhpk.jpg"
+  },
+  "UC9MRdB1ruN8GMnf6YbvrZ-Q": {
+    "uid": "admin_uid",
+    "profile_uid": "UC9MRdB1ruN8GMnf6YbvrZ-Q",
+    "name": "RoboFuse - Car City Universe",
+    "description": "➢ Subscribe to discovers the crazy adventures of Rodeo, Booster to save Car City of Zitron an evil genius.\nhttps://www.youtube.com/channel/UCUKP5xfXjDIbcUoN7O_LwXA?sub_confirmation=1\n\nMeet Rodeo and Booster, two best friends with the power to fuse into one super robot: ROBOFUSE ! With this unique ability, they'll protect Car City from the evil Zitron. Rumoured to be an alien-car, this villain won't be easy to stop. But Robo Fuse has a secret weapon up his high-teched sleeve… merging with a Car City resident in order to gain a unique, extra ability.\n\n",
+    "listing_type": "YouTube",
+    "media_types": "video",
+    "usage_policy": "open",
+    "handle_url": "http://www.youtube.com/@RoboFuse_CarCityUniverse",
+    "topics": "Action & Adventure",
+    "languages": "",
+    "keywords": "",
+    "handle_image": "https://res.cloudinary.com/dd3jjigpm/image/upload/v1736316078/wlnnucyjgj0oygdtfmeq.jpg"
+  }
+}
