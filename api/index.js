@@ -2,6 +2,7 @@ const cron = require("node-cron");
 const cors = require("cors");
 const NodeCache = require("node-cache");
 const listings = require("../data/list");
+const listing_data = require("../data/latestprotectpyc.listings");
 const bodyParser = require("body-parser");
 const cache = new NodeCache({ stdTTL: 0, checkperiod: 0 });
 const fs = require("fs");
@@ -43,8 +44,6 @@ const loadCacheFromFile = () => {
   //   }
   // }
 
-
-
   if (fs.existsSync(cacheFile)) {
     try {
       const cacheData = JSON.parse(fs.readFileSync(cacheFile, "utf-8")); // Parse JSON
@@ -67,8 +66,6 @@ const loadCacheFromFile = () => {
     }
   }
 };
-
-
 
 // Save cache data to file before server stops
 const saveCacheToFile = () => {
@@ -127,6 +124,16 @@ const deleteCache = (key) => {
   }
 };
 
+//get listings in batch of 20
+function fetchData(array, userInput, pageSize = 20) {
+  // Calculate the start and end indices
+  const startIndex = (userInput - 1) * pageSize;
+  const endIndex = startIndex + pageSize;
+
+  // Slice the array to fetch the required objects
+  return array.slice(startIndex, endIndex);
+}
+
 // API Endpoints
 app.get("/", (req, res) => {
   console.log("counter: ", counter);
@@ -153,6 +160,21 @@ app.get("/list", (req, res) => {
   console.log("req.query: ", req.query);
   const data = getCache(`${profile_uid}`);
   res.status(200).send({ data: data });
+});
+
+app.get("/listings", (req, res) => {
+  try {
+    if(!req.hasOwnProperty("query")||!req.query.hasOwnProperty("page")){
+      res.status(400).send({ message: 'invalid input' });
+    }
+    const page = req.query.page;
+    const userInput = Number(page); // User input (e.g., 1 for page 1, 2 for page 2, etc.)
+    const result = fetchData(listing_data, userInput);
+    res.status(200).send({ data: result });
+  } catch (error) {
+    console.log("error: ", error);
+    res.status(400).send({ error: error });
+  }
 });
 
 // Start the server
