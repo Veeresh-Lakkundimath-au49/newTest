@@ -21,6 +21,7 @@ const corsOptions = {
 
 // Use cors middleware with options
 app.use(bodyParser.json());
+//this is the middleware to handle CORS
 app.use(cors(corsOptions));
 
 // Load cache from the file if it exists and contains valid JSON
